@@ -10,6 +10,6 @@ int main() {
 #endif
 	int a = 5;
 	int ab = 5;
-	
+	int k = 10;
 	return 0;
 }
