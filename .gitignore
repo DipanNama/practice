@@ -1,2 +1,42 @@
-# Compiled Sources
-*.exe
+# Ignore all Compiled Sources
+**.exe
+
+# Ignore all Node_Module files and dependencies
+**node_modules
+**.pnp
+**.pnp.js
+
+# Ignore all java classes 
+**.class
+
+# Ignore all zip files 
+**.zip
+
+# Ignore all documents like pdfs, excel sheets, docx, etc...
+**.docx
+**.pdf
+**.Pdf
+**.pptx
+
+#Ignore all .vscode folders
+**.vscode
+
+# Ignore all .env files
+**.env
+
+# testing
+**coverage
+
+# production
+**build
+
+# misc
+**.DS_Store
+**.env.local
+**.env.development.local
+**.env.test.local
+**.env.production.local
+
+**npm-debug.log*
+**yarn-debug.log*
+**yarn-error.log*
