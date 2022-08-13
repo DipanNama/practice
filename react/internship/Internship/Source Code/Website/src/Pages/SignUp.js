@@ -1,7 +1,9 @@
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from 'firebase/auth';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../firebase';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 
 export const SignUp = () => {
     const bg = {
@@ -14,10 +16,20 @@ export const SignUp = () => {
         pass: "",
         repeatPass: ""
     });
-
     const [errorMsg, setErrorMsg] = useState("");
 
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+
+    const provider = new GoogleAuthProvider();
+    const googleSignup = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                console.log("Successful Login of the user : ", user.displayName)
+            }).catch((error) => {
+                console.log("Error : ", error)
+            });
+    }
 
     const handleSubmission = () => {
         if (!values.name || !values.email || !values.pass || !values.repeatPass) {
@@ -29,7 +41,6 @@ export const SignUp = () => {
             return;
         }
         setErrorMsg("");
-
         setSubmitButtonDisabled(true);
         createUserWithEmailAndPassword(auth, values.email, values.pass).then(async (res) => {
             setSubmitButtonDisabled(false);
@@ -37,6 +48,11 @@ export const SignUp = () => {
             await updateProfile(user, {
                 displayName: values.name,
             });
+
+            sendEmailVerification(auth.currentUser).then(() => {
+                console.log("Email sent successfully");
+            });
+            
             navigate("/");
             console.log(user);
         }).catch(err => {
@@ -69,8 +85,6 @@ export const SignUp = () => {
                             <div className="text-center">
                                 <h2 className="text-4xl font-bold text-center text-gray-700 dark:text-white">Sign Up</h2>
 
-                                {/* <p className="text-xl text-center text-gray-600 dark:text-gray-200">Create Your Account</p> */}
-
                                 <Link to="/" className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-200 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <div className="px-4 py-2">
                                         <svg className="w-6 h-6" viewBox="0 0 40 40">
@@ -81,7 +95,7 @@ export const SignUp = () => {
                                         </svg>
                                     </div>
 
-                                    <span className="w-5/6 px-4 py-3 font-bold text-center">Sign Up with Google</span>
+                                    <span className="w-5/6 px-4 py-3 font-bold text-center"><button onClick={googleSignup}>Sign Up with Google</button></span>
                                 </Link>
 
                                 <div className="flex items-center justify-between mt-4">
