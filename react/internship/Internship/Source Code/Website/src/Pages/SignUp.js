@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../firebase';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-
+import { db } from '../firebase';
+import { doc,serverTimestamp, setDoc } from 'firebase/firestore';
 
 export const SignUp = () => {
     const bg = {
@@ -16,6 +17,7 @@ export const SignUp = () => {
         pass: "",
         repeatPass: ""
     });
+    const userRoles = ['user'];
     const [errorMsg, setErrorMsg] = useState("");
 
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
@@ -26,6 +28,14 @@ export const SignUp = () => {
             .then((result) => {
                 const user = result.user;
                 console.log("Successful Login of the user : ", user.displayName)
+                // const credential = GoogleAuthProvider.credentialFromResult(result);
+                // console.log(credential)
+                setDoc(doc(db, "users", result.user.uid), {
+                    name: user.displayName,
+                    email: user.email,
+                    userRoles,
+                    timestamp: serverTimestamp()
+                });
             }).catch((error) => {
                 console.log("Error : ", error)
             });
@@ -45,9 +55,18 @@ export const SignUp = () => {
         createUserWithEmailAndPassword(auth, values.email, values.pass).then(async (res) => {
             setSubmitButtonDisabled(false);
             const user = res.user;
+            await setDoc(doc(db, "users", res.user.uid), {
+                name: values.name,
+                email: values.email,
+                userRoles,
+                timestamp: serverTimestamp()
+            });
             await updateProfile(user, {
                 displayName: values.name,
             });
+
+
+
 
             sendEmailVerification(auth.currentUser).then(() => {
                 console.log("Email sent successfully");

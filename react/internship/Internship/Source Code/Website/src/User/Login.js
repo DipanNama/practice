@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword,sendPasswordResetEmail } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../firebase';
 
@@ -9,17 +9,17 @@ export const Login = () => {
     };
 
     const navigate = useNavigate();
-    const [ values, setValues ] = useState({
-        email : "",
-        pass : ""
+    const [values, setValues] = useState({
+        email: "",
+        pass: ""
     });
 
-    const [ errorMsg, setErrorMsg ] = useState("");
+    const [errorMsg, setErrorMsg] = useState("");
 
-    const [ submitButtonDisabled, setSubmitButtonDisabled ] = useState(false);
+    const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
     const handleSubmission = () => {
-        if(!values.email || !values.pass){
+        if (!values.email || !values.pass) {
             setErrorMsg("Fill Out All Fields");
 
             return;
@@ -27,7 +27,7 @@ export const Login = () => {
         setErrorMsg("");
 
         setSubmitButtonDisabled(true);
-        signInWithEmailAndPassword(auth,values.email,values.pass).then(async(res) =>{
+        signInWithEmailAndPassword(auth, values.email, values.pass).then(async (res) => {
             setSubmitButtonDisabled(false);
             const user = res.user;
             navigate("/");
@@ -42,6 +42,15 @@ export const Login = () => {
     // const disableRefresh = (e) => {
     //     e.preventDefault();
     // }
+    const resetPassword = () => {
+        sendPasswordResetEmail(auth, values.email)
+            .then(() => {
+                console.log("Password reset link send successfully!!!")
+            })
+            .catch((error) => {
+                console.log("Error: " , error)
+            });
+    }
 
 
 
@@ -71,16 +80,16 @@ export const Login = () => {
                                 <form>
                                     <div>
                                         <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
-                                        <input type="email" name="email" id="email" placeholder="example@example.com" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" onChange={(event) => setValues((prev) => ({...prev,email: event.target.value}))} />
+                                        <input type="email" name="email" id="email" placeholder="example@example.com" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" onChange={(event) => setValues((prev) => ({ ...prev, email: event.target.value }))} />
                                     </div>
 
                                     <div className="mt-6">
                                         <div className="flex justify-between mb-2">
                                             <label htmlFor="password" className="text-sm text-gray-600 dark:text-gray-200">Password</label>
-                                            <Link to="/forgotPassword" className="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline">Forgot password?</Link>
+                                            <Link to="/forgotPassword" onClick={resetPassword} className="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline">Forgot password?</Link>
                                         </div>
 
-                                        <input type="password" name="password" id="password" placeholder="Your Password" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" onChange={(event) => setValues((prev) => ({...prev,pass: event.target.value}))} />
+                                        <input type="password" name="password" id="password" placeholder="Your Password" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" onChange={(event) => setValues((prev) => ({ ...prev, pass: event.target.value }))} />
                                     </div>
 
                                     <h1 className='text-white'>{errorMsg}</h1>

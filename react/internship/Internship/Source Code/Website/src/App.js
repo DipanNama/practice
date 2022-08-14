@@ -33,6 +33,7 @@ import { History } from "./User/History";
 import { Rewards } from "./User/Rewards";
 import { Help } from "./Help";
 import { Settings } from "./User/Settings";
+import { ForgotPassword } from "./Pages/ForgotPassword";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -158,6 +159,13 @@ function App() {
                   <UserProfile name={userName} />
                 
               }
+            />
+
+            <Route
+              exact
+              path="/forgotpassword"
+              element={<ForgotPassword />
+            }  
             />
 
             <Route
