@@ -25,7 +25,7 @@ export const Header = (props) => {
                             <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2 ml-10">
                                 <input type="text" id="hero-field" name="hero-field" className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-12 search leading-8 transition-colors duration-200 ease-in-out" value={message} placeholder="Search here..." autoComplete='off' onChange={handleChange} />
                             </div>
-                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"><Link to="/search">Button</Link></button>
+                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"><Link to="/search">Search</Link></button>
                         </div> : <div className="md:ml-auto md:mr-12 flex flex-wrap items-center text-base justify-center"></div>
                     }
                     <nav className="md:ml-12 flex flex-wrap items-center text-base justify-center">

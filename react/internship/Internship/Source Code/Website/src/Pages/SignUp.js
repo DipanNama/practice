@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../firebase';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { db } from '../firebase';
-import { doc,serverTimestamp, setDoc } from 'firebase/firestore';
+import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 
 export const SignUp = () => {
     const bg = {
@@ -27,6 +27,7 @@ export const SignUp = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
+
                 console.log("Successful Login of the user : ", user.displayName)
                 // const credential = GoogleAuthProvider.credentialFromResult(result);
                 // console.log(credential)
@@ -55,6 +56,7 @@ export const SignUp = () => {
         createUserWithEmailAndPassword(auth, values.email, values.pass).then(async (res) => {
             setSubmitButtonDisabled(false);
             const user = res.user;
+
             await setDoc(doc(db, "users", res.user.uid), {
                 name: values.name,
                 email: values.email,
@@ -71,7 +73,7 @@ export const SignUp = () => {
             sendEmailVerification(auth.currentUser).then(() => {
                 console.log("Email sent successfully");
             });
-            
+
             navigate("/");
             console.log(user);
         }).catch(err => {
