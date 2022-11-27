@@ -75,16 +75,16 @@ int main(){
     // * * * *
     // **   **
     // *******
-    // int n=15;
-    // for (int i=1;i<=n; i++){
-    //     for (int j=1;j<=n;j++){
-    //         if(i==1 || i==n || j==1 || j==n || i==j || j==n-i+1)
-    //         printf("*");
-    //         else
-    //         printf(" ");
-    //     }
-    //     printf("\n");
-    // }
+    int n=15;
+    for (int i=1;i<=n; i++){
+        for (int j=1;j<=n;j++){
+            if(i==1 || i==n || j==1 || j==n || i==j || j==n-i+1)
+            printf("*");
+            else
+            printf(" ");
+        }
+        printf("\n");
+    }
 
 
 
@@ -277,13 +277,13 @@ int main(){
     // 5 4 3 2 1
     // 5 4 3 2 1
     
-    int n=5;
-    for (int i=n;i<;i++){
-        for(int j=n;j<0;j++){
-            printf("%d ",j);
-        }
-        printf("\n");
-    }
+    // int n=5;
+    // for (int i=n;i<0;i++){
+    //    for(int j=n;j<0;j++){
+    //        printf("%d ",j);
+    //    }
+    //    printf("\n");
+    //}
 
 
 
