@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: 'Poppins';
+}
 .container{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../assets/geran-de-klerk-qzgN45hseN0-unsplash.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url(../assets/geran-de-klerk-qzgN45hseN0-unsplash.jpg);
     background-position: center;
     background-size: cover;
     padding-left: 8%;
@@ -88,16 +94,16 @@ button{
     transition: transform 0.3s;
 }
 .card1{
-    background-image: url(../assets/jay-mantri-TFyi0QOx08c-unsplash.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/jay-mantri-TFyi0QOx08c-unsplash.jpg);
 }
 .card2{
-    background-image: url(../assets/johannes-plenio-bhCdwWNmXw8-unsplash.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/johannes-plenio-bhCdwWNmXw8-unsplash.jpg);
 }
 .card3{
-    background-image: url(../assets/juan-davila-P8PlK2nGwqA-unsplash.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/juan-davila-P8PlK2nGwqA-unsplash.jpg);
 }
 .card4{
-    background-image: url(../assets/marita-kavelashvili-ugnrXk1129g-unsplash.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/marita-kavelashvili-ugnrXk1129g-unsplash.jpg);
 }
 .card:hover{
     transform: translateY(-10px);
