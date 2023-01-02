@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'valencia';
-    src: url(../font/Valencia.woff) format('woff');
+    src: url('../fonts/Valencia.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'hikou outline';
-    src: url('../font/Hikou\ Outline.otf') format('woff');
+    src: url('../fonts/Hikou\ Outline.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -143,7 +143,6 @@ html,body{
         height: 3000px;
         width: 3000px;
         border-radius: 50%;
-        /* transform: scale(1); */
     }
 }
 
@@ -159,7 +158,7 @@ html,body{
 
 @keyframes container-reveal {
     100%{
-        width: 110%;
+        width: 125%;
         left: 0%;
     }
 }
