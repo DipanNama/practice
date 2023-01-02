@@ -27,6 +27,10 @@ html,body{
     position: relative;
 }
 
+ body::-webkit-scrollbar{
+    display: none;
+}
+
 .container{
     position: absolute;
     top: 50%;
@@ -80,7 +84,9 @@ html,body{
     height: 150px;
     width: 450px;
     padding-left: 20px;
-    animation: text-reveal 1s forwards;
+    /* for stroke animation */
+    /* animation: text-reveal 0.2s ease-in forwards; */ 
+    animation: text-reveal 1s ease-in forwards;
     animation-delay: 8s;
     z-index: 995;
 }
@@ -113,6 +119,59 @@ html,body{
     width: 100%;
 }
 
+.navbar{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    opacity: 0;
+    z-index: 998;
+    display: flex;
+    justify-content: space-between;
+    animation: navbar-reveal 2s forwards;
+    animation-delay: 9s;
+}
+
+.navbar .logo{
+    font-family: Satisfy;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 40px 100px;
+    justify-content: center;
+    /* text-transform: uppercase; */
+    color: #fff;
+}
+
+.navbar .nav-links{
+    display: flex;
+    padding: 40px 100px;
+}
+
+.navbar .nav-links li{
+    list-style-type: none;
+    justify-content: center;
+    padding-left: 50px;
+}
+
+.navbar .nav-links li a{
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    font-family: Satisfy;
+    font-weight: 500;
+    color: #fff;
+    font-size: 25px;
+}
+
+/* section{
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    top: 100%;
+    z-index: 999;
+} */
+
+
+
 @keyframes overlay {
     50%{
         width: 100%;
@@ -127,7 +186,8 @@ html,body{
 
 @keyframes text-reveal {
     100%{
-        color:#F9F6EE;
+        /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
+        color: #fff;
     }
 }
 
@@ -160,5 +220,16 @@ html,body{
     100%{
         width: 125%;
         left: 0%;
+    }
+}
+
+@keyframes navbar-reveal {
+    0%{
+        opacity: 0;
+        transform: translate(0,-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,20px);
     }
 }
