@@ -66,7 +66,7 @@ html, body{
 .right .main{
     width: 70%;
     height: 90%;
-    background-image: url(https://images.unsplash.com/photo-1563074409-5c5d31af4e94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+    background-image: url(https://media-api.xogrp.com/images/60bf3621-311e-4382-bb7f-da9f684f60cf~cr_0.0.1968.1318?quality=50);
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -75,7 +75,7 @@ html, body{
 .right .main .bg-overlay{
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.2); */
     position: absolute;
 }
 
@@ -165,6 +165,7 @@ html, body{
 
 .right .main section .info h3{
     color: #fff;
+    font-size: 18px;
     font-weight: 300;
     letter-spacing: 0.5px;
 }
