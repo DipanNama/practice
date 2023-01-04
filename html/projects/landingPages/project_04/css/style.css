@@ -1,9 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria');
 
 html,body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Alexandria;
+    height: 100%;
+    width: 100%;
 }
+
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container .left{
+    width: 50%;
+    height: 100%;
+    background-color: #202329;
+}
+
+.left .left-navbar .logo{
+    position: absolute;
+    top: 6%;
+    left: 60px;
+}
+
+.left .left-navbar .logo h3{
+    color: #e9e0d6;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.left .left-navbar .logo span{
+    color: #fb672c;
+}
+
+.left .heading{
+    position: absolute;
+    top: 18%;
+    left: 12%;
+}
+
+.left .heading h1{
+    font-size: 80px;
+    color: #e3cfb9;
+    font-weight: 600;
+    line-height: 35px;
+    /* letter-spacing: -3px; */
+}
+
+.left .left-info-container{
+    position: absolute;
+    height: 180px;
+    width: 300px;
+    bottom: 30%;
+    background-color: #2a3138;
+}
+
+.left .left-info{
+    position: relative;
+    padding-left: 50%;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* line-height: 30px; */
+}
+
+.left .left-info h2{
+    color: #f3f0ec;
+    /* padding-top: 10px; */
+}
+
+.left .left-info p{
+    color: #50555c;
+    /* padding-bottom: 10px; */
+    /* line-height: 10px; */
+    /* width: 350px; */
+    /* background-color: red; */
+    /* white-space: wrap; */
+}
+
+.left .left-bottom{
+    position: absolute;
+    height: 35px;
+    width: 200px;
+    background-color: #fb672c;
+    bottom: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding-left: 50; */
+    white-space: nowrap;
+}
+
+.left .left-bottom h3{
+    color: #f3f0ec;
+    text-transform: uppercase;
+    /* padding: 10px; */
+    padding-left: 70%;
+}
+
+.container .right{
+    width: 50%;
+    height: 100%;
+    background-color: #171c24;
+}
+
 
