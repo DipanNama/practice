@@ -17,9 +17,7 @@ html,body{
 
 .left{
     flex: 1;
-    /* width: 50%; */
     height: 100%;
-    /* background-color: red; */
 }
 
 .left .navbar{
@@ -51,12 +49,6 @@ html,body{
     display: flex;
     width: 85%;
     align-items: center;
-    /* justify-content: center; */
-    /* position: relative; */
-    /* right: 0; */
-    /* top: 0; */
-    /* padding: 0 300px; */
-    
 }
 
 .left .navbar .nav-right li{
@@ -100,14 +92,12 @@ html,body{
     left: 20%;
     height: 300px;
     width: 70%;
-    /* background-color: red; */
 }
 
 .left .heading h2{
     font-size: 120px;
     line-height: 60px;
     color: rgb(15, 15, 15);
-    /* padding-bottom: 40px; */
 }
 
 .left .heading p{
@@ -115,7 +105,6 @@ html,body{
     color: rgb(160, 160, 160);
     font-weight: 700;
     padding-bottom: 20px;
-    /* line-height: -100px; */
 }
 
 .left .heading a{
@@ -129,8 +118,6 @@ html,body{
 
 .right{
     flex: 2;
-    /* width: 50%; */
-    /* background-color: green; */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -141,19 +128,13 @@ html,body{
     width: 100%;
     height: 50%;
     display: flex;
-    /* background-color: red; */
 }
 
 .right .right-top-left{
     width: 55%;
     height: 100%;
     background-color: #f2e9ea;
-
-    /* z-index: 3; */
     position: relative;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
 }
 .right .right-top-left .right-top-left-bg{
     width: 100%;
@@ -164,19 +145,6 @@ html,body{
     position: relative;
     z-index: 2;
 }
-
-/* .right .right-top-left h1{ */
-    /* position: absolute; */
-    /* top: 0; */
-    /* left: 0; */
-    /* color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    font-size: 150px;
-    line-height: 50px; */
-    /* padding-top: 50px; */
-    /* padding-left: 60px; */
-
-/* } */
 
 .right .right-top-left h1:nth-child(2){
     top: 0;
@@ -209,17 +177,12 @@ html,body{
     font-size: 100px;
     bottom: 5%;
     padding-left: 65px;
-    /* padding-bottom: 165px; */
     position: absolute;
-    /* color: transparent; */
-    -webkit-background-clip: text;
 }
 
 .right .right-top-right{
     width: 45%;
     height: 100%;
-    /* position: absolute; */
-    /* background-color: rgb(255, 0, 221); */
     background-image: url(https://i.pinimg.com/564x/2a/a6/85/2aa6855ca65660e6af5eb0081b36174e.jpg);
     background-position: 50% 80%;
     background-size: cover;
@@ -228,8 +191,25 @@ html,body{
 .right .right-bottom{
     width: 100%;
     height: 50%;
-    /* background-color: blue; */
     background-image: url(https://uploadfile.bizhizu.cn/up/b6/ec/ce/b6ecce3c820308027a691cff07b0a568.jpg);
     background-position: 50% 80%;
     background-size: cover;
+}
+
+.right .right-bottom .right-bottom-arrow{
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 240px;
+    background-color: #fff;
+}
+
+.right .right-bottom .right-bottom-arrow i{
+    font-size: 45px;
+}
+
+.right .right-bottom .right-bottom-arrow {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
