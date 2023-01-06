@@ -27,10 +27,6 @@ html,body{
     position: relative;
 }
 
- /* body::-webkit-scrollbar{
-    display: none;
-} */
-
 .container{
     position: absolute;
     top: 50%;
@@ -42,11 +38,6 @@ html,body{
     animation-delay: 4.7s;
     z-index: 909;
     background-color: #010a14;
-    /* background-image: url(https://images.unsplash.com/photo-1620120966883-d977b57a96ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    /* filter: blur(15px); */
 }
 
 .preloader h1{
@@ -89,12 +80,9 @@ html,body{
     height: 150px;
     width: 450px;
     padding-left: 20px;
-    /* for stroke animation */
-    /* animation: text-reveal 0.2s ease-in forwards; */ 
     animation: text-reveal 1s ease-in forwards;
     animation-delay: 6.4s;
     z-index: 995;
-    /* filter: blur(3px); */
 }
 
 .main .heading h1::before{
@@ -114,8 +102,6 @@ html,body{
     position: relative;
     height: 100%;
     width: 100%;
-    /* animation: header-moveup forwards 3s;
-    animation-delay: 10s; */
 }
 
 .main .heading{
@@ -182,7 +168,6 @@ html,body{
 .navbar .nav-links{
     display: flex;
     padding: 40px 100px;
-    /* animation: nav-links-animate 2s forwards; */
 }
 
 .navbar .nav-links li{
@@ -211,12 +196,10 @@ html,body{
 
 .navbar .nav-links li a{
     text-decoration: none;
-    /* text-transform: uppercase; */
     font-family: Satisfy;
     font-weight: 500;
     color: #fff;
     font-size: 25px;
-    /* animation: nav-links-animate 2s forwards; */
 }
 
 @keyframes nav-links-animate {
@@ -226,14 +209,29 @@ html,body{
     }
 }
 
-/* section{
-    height: 100vh;
-    width: 100%;
-    background-color: red;
+section .container-box{
+    height: 200px;
+    min-width: 200px;
+    width: 200px;
     position: absolute;
-    top: 100%;
-    z-index: 999;
-} */
+    right: 100px;
+    top: 37%;
+    right: 15%;
+    z-index: 990;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section .container-box .element{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    scale: 0.75;
+}
+
 
 .social{
     position: absolute;
@@ -247,7 +245,6 @@ html,body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* animation-delay: 9s; */
     padding: 20px 10px ;
 }
 
@@ -275,11 +272,9 @@ html,body{
     text-decoration: none;
     font-size: 25px;
     font-weight: 500;
-    /* color: #fff; */
 }
 
 .ri-instagram-line{
-    /* color:transparent; */
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -307,7 +302,6 @@ html,body{
 
 @keyframes text-reveal {
     100%{
-        /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
         color: #fff;
     }
 }
@@ -341,18 +335,15 @@ html,body{
     100%{
         width: 125%;
         left: 0%;
-        /* background-size: cover; */
     }
 }
 
 @keyframes navbar-reveal {
     0%{
         opacity: 0;
-        /* transform: translate(0,-20px); */
     }
     100%{
         opacity: 1;
-        /* transform: translate(0,20px); */
     }
 }
 
@@ -366,10 +357,3 @@ html,body{
         transform: translate(-20px);
     }
 }
-
-/* 
-@keyframes header-moveup {
-    100% {
-         transform: translate(0,-200px);
-    }
-} */
