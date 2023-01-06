@@ -69,22 +69,24 @@ html,body{
 .left .navbar .nav-right li a{
     color: rgb(185, 185, 185);
     text-decoration: none;
-
+    transition: all 0.2s ease-in;
+    padding-bottom: 6px;
 }
 
-.left .navbar .nav-right li a:hover{
+.left .navbar .nav-right li a:hover,
+.left .navbar .nav-right li a.active{
     color: rgb(15, 14, 14);
     text-decoration: none;
-    padding-bottom: 6px;
+    /* padding-bottom: 6px; */
     border-bottom: 4px solid rgb(160, 160, 160);
-    transition: all 0.3s ease-in;
+    /* transition: all 0.3s ease-in; */
 }
 
-.left .navbar .nav-right li .active{
+/* .left .navbar .nav-right li .active{
     color: rgb(15, 14, 14);
     border-bottom: 4px solid rgb(160, 160, 160);
     padding-bottom: 6px;
-}
+} */
 
 .left .heading{
     position: relative;
