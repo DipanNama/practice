@@ -61,6 +61,8 @@ html,body{
     background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/6fe99c16500601.562acd515de7e.jpg);
     background-position: 50% 100%;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: -2;
 }
 
 .main .left .social {
@@ -91,7 +93,7 @@ html,body{
 .main .left .btn{
     position: absolute;
     bottom: 18%;
-    left: 11.5%;
+    left: 24%;
 }
 
 .main .left .btn a{
@@ -146,6 +148,7 @@ html,body{
     width: 250px;
     background-position: 0% 0%;
     background-size: cover;
+    position: relative;
 }
 
 .right .container .image1{
