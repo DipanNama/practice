@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 *{
     margin: 0;
@@ -9,106 +9,174 @@
 body{
     font-family: 'Poppins';
 }
+
 .container{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url(../assets/geran-de-klerk-qzgN45hseN0-unsplash.jpg);
+    background-image: linear-gradient(to right,rgba(171, 98, 255, 0.2), rgba(43, 126, 252, 0.35)),url(../assets/geran-de-klerk-qzgN45hseN0-unsplash.jpg);
     background-position: center;
     background-size: cover;
     padding-left: 8%;
     padding-right: 8%;
     box-sizing: border-box;
 }
+
 .navbar{
     height: 12%;
     display: flex;
     align-items: center;
+    font: 1em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
 }
+
 .logo{
     width: 50px;
     cursor: pointer;
     color: #fff;
 }
+
 .menu-icon{
     width: 30px;
     cursor: pointer;
     color: #fff;
-    margin-left: 40px;
+    margin-left: 100px;
+    font-size: 25px;
 }
+
 nav{
     flex: 1;
     text-align: right;
 }
+
 nav ul li{
     list-style: none;
     display: inline-block;
     margin-left: 60px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font: 12px;
 }
+
 .row{
     display: flex;
     height: 88%;
     align-items: center;
 }
+
 .col{
     flex-basis: 50%;
 }
+
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
 .col:nth-child(2){
     margin-left: 300px;
 }
+
 h1{
     color: #fff;
     font-size: 100px;
+    font-weight: 900;
 }
-p{
+
+.content{
     color: #fff;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    border-left: 5px solid rgb(23, 131, 240);
+    padding: 0 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
+
 button{
     width: 180px;
     color: #000;
-    font-size: 12px;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 1px;
     padding: 12px 0;
     background: #fff;
     border: 0;
     border-radius: 20px;
     outline: none;
-    margin-top: 10px;
+    margin-top: 30px;
+    transition: all 0.5s;
+    opacity: 0;
+    transform: translate(0,100px);
 }
+
+button:hover{
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 12px 0;
+    background: #000;
+}
+
 .card{
     width: 200px;
-    height: 230px;
+    height: 240px;
     display: inline-block;
     border-radius: 10px;
-    padding: 15px 25px;
     box-sizing: border-box;
-    cursor: pointer;
-    margin: 10px 15px;
     background-position: center;
     background-size: cover;
-    transition: transform 0.3s;
+    transition: all 0.5s;
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
+    transform: translate(0,-200px);
+    opacity: 0;
 }
+
 .card1{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/jay-mantri-TFyi0QOx08c-unsplash.jpg);
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(../assets/jay-mantri-TFyi0QOx08c-unsplash.jpg);
 }
+
 .card2{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/johannes-plenio-bhCdwWNmXw8-unsplash.jpg);
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(../assets/johannes-plenio-bhCdwWNmXw8-unsplash.jpg);
 }
+
 .card3{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/juan-davila-P8PlK2nGwqA-unsplash.jpg);
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(../assets/juan-davila-P8PlK2nGwqA-unsplash.jpg);
 }
+
 .card4{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../assets/marita-kavelashvili-ugnrXk1129g-unsplash.jpg);
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(../assets/marita-kavelashvili-ugnrXk1129g-unsplash.jpg);
 }
+
 .card:hover{
     transform: translateY(-10px);
 }
-h5{
+
+.card h1{
     color: #fff;
-    text-shadow: 0 0 5px #999;
+    font-size: 7em;
+    padding: 0 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+
+.card:hover h1{
+    transform: translate(-40px , -40px) scale(0.4);
+}
+
+.card p{
+    color: #fff;
+    font-size: 0.9em;
+    opacity: 0;
+    transition: all 0.5s;
+    padding: 20px;
+}
+
+.card:hover p{
+    opacity: 1;
+    transform: translate(0, -90px);
 }
