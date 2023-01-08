@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>project 07 | Landig page design 06</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+        integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="nav">
         <div class="logo">
@@ -27,17 +32,17 @@
     <div class="main">
         <div class="left">
             <div class="social">
-                <span>follow us</span>
-                <span></span>
-                <span>facebook</span>
-                <span>instagram</span>
+                <span class="social-link">follow us</span>
+                <span class="social-link"></span>
+                <span class="social-link">facebook</span>
+                <span class="social-link">instagram</span>
             </div>
             <div class="btn"><a href="#">full view</a></div>
         </div>
         <div class="right">
             <div class="content">
                 <h1>Don't Be Afraid To Express <br>
-                Yourself Through Fashion!</h1>
+                    Yourself Through Fashion!</h1>
                 <p>The difference between style and <br> Fashion is Quality</p>
             </div>
             <div class="container">
@@ -65,5 +70,77 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let mainImage = document.querySelector('.left');
+        TweenMax.from(mainImage, 1.5, {
+            translateX: "-100%",
+        });
+
+        let logo = document.getElementsByClassName('logo');
+        TweenMax.from(logo, 0.8, {
+            delay:1.2,
+            translateX: "-100%",
+            opacity:0,
+        });
+
+        let menuIcon = document.getElementsByClassName('menu');
+        TweenMax.from(menuIcon, 1.2, {
+            delay:1.8,
+            translateX: "-100%",
+            opacity:0,
+        });
+
+        let image = document.querySelectorAll('.image');
+        TweenMax.staggerTo(image, 1.2, {
+            delay:3,
+            translateX: 0,
+            opacity:1,
+        },0.2);
+
+        let social = document.querySelectorAll('.social-link');
+        TweenMax.staggerFrom(social, 1.2, {
+            delay:3.5,
+            translateY: "-100%",
+            opacity:0,
+        },0.4);
+
+        let btn = document.getElementsByClassName('btn');
+        TweenMax.from(btn, 1.2, {
+            delay:4,
+            translateY: "100%",
+            opacity:0,
+        });
+
+        let contentHeader = document.querySelector('.content > h1');
+        TweenMax.from(contentHeader, 1.2, {
+            delay:4.5,
+            translateY: "-100%",
+            opacity:0,
+        });
+
+        let contentPara = document.querySelector('.content > p');
+        TweenMax.from(contentPara, 1.2, {
+            delay:5,
+            translateY: "100%",
+            opacity:0,
+        });
+
+        let count = document.querySelector('.count');
+        TweenMax.from(count, 1.2, {
+            delay:5,
+            translateY: "-100%",
+            opacity:0,
+        });
+
+        let slider = document.querySelector('.slider');
+        TweenMax.from(slider, 1.2, {
+            delay:5.5,
+            translateY: "-100%",
+            opacity:0,
+        });
+
+    </script>
 </body>
+
 </html>
