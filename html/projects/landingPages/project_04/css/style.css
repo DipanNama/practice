@@ -21,12 +21,12 @@ html,body{
     height: 100%;
     position: relative;
     background-color: #101218;
-    z-index: 999;
+    z-index: -999;
 }
 
 .left .left-navbar .logo{
     position: absolute;
-    top: 6%;
+    margin-top: 40px;
     left: 60px;
 }
 
@@ -107,7 +107,7 @@ html,body{
 
 .container .right .right-navbar i{
     position: absolute;
-    top: 8%;
+    margin-top: 60px;
     right: 60px;
     font-size: 20px;
     color: #f3f0ec;
@@ -137,6 +137,12 @@ html,body{
     color: #12161d65;
 }
 
+.right .right-info-container{
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+}
+
 .right .right-info{
     position: absolute;
     bottom: 25%;
@@ -155,7 +161,7 @@ html,body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transform: translate(-25%);
+    transform: translate(-15%);
 }
 
 .right .right-info .right-info-text h2{
