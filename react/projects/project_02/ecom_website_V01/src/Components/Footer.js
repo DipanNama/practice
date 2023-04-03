@@ -7,53 +7,53 @@ export const Footer = () => {
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap md:text-left text-center order-first">
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Get to Know Us</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">First Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Careers</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Second Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Blog</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Third Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">About Developer's Hub</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Fourth Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Contact Us</Link>
                             </li>
                         </nav>
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Make Money with Us</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">First Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Sell products on Developer's Hub</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Second Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Sell on Developer's Business</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Third Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Become an Affiliate</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Fourth Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Advertise Your Products</Link>
                             </li>
                         </nav>
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Developer's Hub Payment Products</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">First Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Shop with Points</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Second Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Reload Your Balance</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Third Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Developer's Hub Currency Converter</Link>
                             </li>
                             <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Fourth Link</Link>
+                                <Link to="/" className="text-gray-400 hover:text-white">Developer's Hub Business Card</Link>
                             </li>
                         </nav>
                     </div>
@@ -61,13 +61,13 @@ export const Footer = () => {
                         <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">SUBSCRIBE</h2>
                         <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
                             <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
-                                <label htmlFor="footer-field" className="leading-7 text-sm text-gray-400">Placeholder</label>
+                                <label htmlFor="footer-field" className="leading-7 text-sm text-gray-400">Email Us</label>
                                 <input type="text" id="footer-field" name="footer-field" className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-indigo-900 focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
-                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Newsletter</button>
                         </div>
-                        <p className="text-gray-500 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
-                            <br className="lg:block hidden" />waistcoat green juice
+                        <p className="text-gray-500 text-sm mt-2 md:text-left text-center">Subscribe to our newsletter to receive updates on new products, sales, and special promotions.
+                            {/* <br className="lg:block hidden" /> */}
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export const Footer = () => {
                         </svg>
                         <span className="ml-3 text-xl">Developers Hub</span>
                     </Link>
-                    <p className="text-sm text-gray-400 sm:ml-6 sm:mt-0 mt-4">© 2022 Developers Hub —
+                    <p className="text-sm text-gray-400 sm:ml-6 sm:mt-0 mt-4">© 2023 Developers Hub —
                         <Link to="https://twitter.com/knyttneve" className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@Developers_Hub</Link>
                     </p>
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

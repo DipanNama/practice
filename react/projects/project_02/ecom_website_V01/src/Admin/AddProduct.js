@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { db, storage } from '../firebase';
+import Swal from 'sweetalert2'
 
 export const AddProduct = () => {
 
@@ -38,8 +39,25 @@ export const AddProduct = () => {
                         default:
                             break;
                     }
+                    if (progress === 100){
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Product images are been uploaded',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                        
                 },
                 (error) => {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: 'Product images can\'t be uploaded',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     console.log(error)
                 },
                 () => {
@@ -64,6 +82,13 @@ export const AddProduct = () => {
                 timestamp: serverTimestamp()
             });
             console.log("Document written with ID: ", res.id);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Product has been uploaded successfully !!!',
+                showConfirmButton: false,
+                timer: 1500
+            })
         } catch (err) {
             console.log(err)
         }
