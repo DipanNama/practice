@@ -1,7 +1,7 @@
 import React from 'react'
 import { DashbaordSidebar } from './Dashboard/DashboardSidebar'
 import { DashboardFooter } from './Dashboard/DashboardFooter'
-import { AddProduct } from '../Admin/AddProduct'
+// import { AddProduct } from '../Admin/AddProduct'
 // import { Settings } from './Settings'
 
 export const Explore = (props) => {

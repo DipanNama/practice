@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import "../App.css";
+import { useSelector,useDispatch } from 'react-redux'
 
 export const Header = (props) => {
     const [message, setMessage] = useState("");
@@ -11,6 +12,7 @@ export const Header = (props) => {
         setMessage(finalMessage);
         console.log(message)
     }
+    const stateValue = useSelector((state) => state.changeCartValue);
     return (
         <div>
             <header className="text-gray-400 bg-gray-900 body-font">
@@ -33,7 +35,6 @@ export const Header = (props) => {
                         <Link to='/home' className="mr-5 hover:text-white">Home</Link>
                         <Link to='/about' className="mr-5 hover:text-white">About Us</Link>
                         <Link to='/contact' className="mr-5 hover:text-white">Contact Us</Link>
-                        {/* <Link to='/cart' className="mr-5 hover:text-white">Cart</Link> */}
                     </nav>
                     {!props.loggedIn ?
                         <div>
@@ -49,7 +50,7 @@ export const Header = (props) => {
                             </button>
                         </div>
                         : <div>
-                            <Link to='/cart' className="mr-5 hover:text-white"><i className="fa-solid fa-cart-shopping"></i><span class='badge badge-warning' id='lblCartCount'> 5 </span></Link>
+                            <Link to='/cart' className="mr-5 hover:text-white"><i className="fa-solid fa-cart-shopping"></i><span class='badge badge-warning' id='lblCartCount'>{stateValue}</span></Link>
                             <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"><Link to="/account" >Account</Link>
                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>

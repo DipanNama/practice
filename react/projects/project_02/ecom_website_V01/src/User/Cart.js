@@ -3,8 +3,10 @@ import { DashbaordSidebar } from './Dashboard/DashboardSidebar'
 import { DashboardFooter } from './Dashboard/DashboardFooter'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
+import { useSelector,useDispatch } from 'react-redux'
 
 export const Cart = (props) => {
+  const stateValue = useSelector((state) => state.changeCartValue);
   return (
     <div>
       <div className='flex'>
@@ -13,21 +15,13 @@ export const Cart = (props) => {
           <h2 className="text-3xl font-semibold text-center text-gray-700 dark:text-white">Welcome to Dashboard</h2>
           <div className="px-4 py-8 h-full bg-white dark:border-gray-600">
 
-
-
-
-
-
-
-
-
             <div class="bg-gray-100">
               <div class="container mx-auto mt-10">
                 <div class="flex shadow-md my-10">
                   <div class="w-3/4 bg-white px-10 py-10">
                     <div class="flex justify-between border-b pb-8">
                       <h1 class="font-semibold text-2xl">Shopping Cart</h1>
-                      <h2 class="font-semibold text-2xl">3 Items</h2>
+                      <h2 class="font-semibold text-2xl">{stateValue} Items</h2>
                     </div>
                     <div class="flex mt-10 mb-5">
                       <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
@@ -51,7 +45,7 @@ export const Cart = (props) => {
                   <div id="summary" class="w-1/4 px-8 py-10">
                     <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
                     <div class="flex justify-between mt-10 mb-5">
-                      <span class="font-semibold text-sm uppercase">Items 3</span>
+                      <span class="font-semibold text-sm uppercase">Items {stateValue}</span>
                       <span class="font-semibold text-sm">590$</span>
                     </div>
                     <div>
