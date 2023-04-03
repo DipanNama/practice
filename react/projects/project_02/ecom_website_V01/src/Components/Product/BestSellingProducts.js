@@ -5,7 +5,7 @@ export const BestSellingProducts = () => {
     return (
         <div>
             <CTA heading="Best selling Products" btn="Show All" properties="text-gray-400 bg-gray-800 py-12 body-font" />
-            <section className="bg-white dark:bg-gray-800">
+            <section className="bg-gray-900">
                 <div className="container px-6 py-8 mx-auto">
                     <div className="mt-6 lg:mt-0 lg:px-2 ">
                         <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

@@ -23,7 +23,7 @@ export const DealsOfTheDAy = () => {
     return (
         <div>
             <CTA heading="Deals of the Day" btn="Show All" let properties="text-gray-400 bg-gray-900 py-12 body-font" />
-            <section className="bg-white dark:bg-gray-900">
+            <section className="bg-gray-900">
                 <div className="container px-6 py-8 mx-auto">
 
                     <div className="mt-6 lg:mt-0 lg:px-2 ">

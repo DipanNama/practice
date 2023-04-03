@@ -53,7 +53,7 @@ export const ContactUs = (props) => {
                             <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
                                 <div className="lg:w-1/2 px-6">
                                     <h2 className="title-font font-semibold text-white tracking-widest text-xs">ADDRESS</h2>
-                                    <p className="mt-1">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+                                    <p className="mt-1">Agartala, Tripura, India, 799001</p>
                                 </div>
                                 <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                                     <h2 className="title-font font-semibold text-white tracking-widest text-xs">EMAIL</h2>

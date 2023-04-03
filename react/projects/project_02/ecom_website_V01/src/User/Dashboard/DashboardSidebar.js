@@ -15,9 +15,9 @@ export const DashbaordSidebar = (props) => {
     return (
         <>
             <div className='w-1/6'>
-                <div className="flex flex-col h-screen px-4 py-8 bg-white dark:bg-gray-800 dark:border-gray-600">
+                <div className="flex flex-col h-screen px-4 py-8 bg-white border-gray-600">
                     <Link to="/">
-                        <h2 className="text-3xl flex font-semibold text-center text-gray-800 dark:text-white">
+                        <h2 className="text-3xl flex font-semibold text-center text-gray-800">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-1/6 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                             </svg>
