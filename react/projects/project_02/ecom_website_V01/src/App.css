@@ -2,3 +2,20 @@
 .search{
     padding: 4px 150px 4px 150px;
 }
+
+
+
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 14px;
+      background: #ff0000;
+      color: #fff;
+      padding: 2px 2px;
+      vertical-align: top;
+      margin-left: -10px;
+      border-radius: 50%;
+  }

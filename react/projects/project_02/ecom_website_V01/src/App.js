@@ -34,6 +34,8 @@ import { Rewards } from "./User/Rewards";
 import { Help } from "./Help";
 import { Settings } from "./User/Settings";
 import { ForgotPassword } from "./Pages/ForgotPassword";
+import { AddProduct } from "./Admin/AddProduct";
+import  Checkout  from "./Payment/Checkout";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -117,6 +119,15 @@ function App() {
               }
             />
 
+
+            <Route
+              exact
+              path="/checkout"
+              element={
+                <Checkout name={userName} />
+              }
+            />
+
             <Route
               exact
               path="/search"
@@ -145,9 +156,19 @@ function App() {
               exact
               path="/account"
               element={
-                
-                  <Account name={userName} />
-                
+
+                <Account name={userName} />
+
+              }
+            />
+
+            <Route
+              exact
+              path="/product/add"
+              element={
+
+                <AddProduct name={userName} />
+
               }
             />
 
@@ -155,9 +176,9 @@ function App() {
               exact
               path="/profile"
               element={
-                
-                  <UserProfile name={userName} />
-                
+
+                <UserProfile name={userName} />
+
               }
             />
 
@@ -165,16 +186,16 @@ function App() {
               exact
               path="/forgotpassword"
               element={<ForgotPassword />
-            }  
+              }
             />
 
             <Route
               exact
               path="/activity"
               element={
-                
-                  <UserActivities name={userName} />
-                
+
+                <UserActivities name={userName} />
+
               }
             />
 
@@ -182,9 +203,9 @@ function App() {
               exact
               path="/notifications"
               element={
-                
-                  <UserNotifications name={userName} />
-                
+
+                <UserNotifications name={userName} />
+
               }
             />
 
@@ -192,9 +213,9 @@ function App() {
               exact
               path="/orders"
               element={
-                
-                  <Orders name={userName} />
-                
+
+                <Orders name={userName} />
+
               }
             />
 
@@ -202,9 +223,9 @@ function App() {
               exact
               path="/wishlist"
               element={
-                
-                  <Wishlist name={userName} />
-                
+
+                <Wishlist name={userName} />
+
               }
             />
 
@@ -212,9 +233,9 @@ function App() {
               exact
               path="/billing"
               element={
-                
-                  <Billing name={userName} />
-                
+
+                <Billing name={userName} />
+
               }
             />
 
@@ -222,9 +243,9 @@ function App() {
               exact
               path="/cart"
               element={
-                
-                  <Cart name={userName} />
-                
+
+                <Cart name={userName} />
+
               }
             />
 
@@ -240,9 +261,9 @@ function App() {
               exact
               path="/rewards"
               element={
-                
-                  <Rewards name={userName} />
-                
+
+                <Rewards name={userName} />
+
               }
             />
 
@@ -250,9 +271,9 @@ function App() {
               exact
               path="/history"
               element={
-                
-                  <History name={userName} />
-                
+
+                <History name={userName} />
+
               }
             />
 
@@ -260,9 +281,9 @@ function App() {
               exact
               path="/settings"
               element={
-                
-                  <Settings name={userName} />
-                
+
+                <Settings name={userName} />
+
               }
             />
 
@@ -270,9 +291,9 @@ function App() {
               exact
               path="/logout"
               element={
-                
-                  <Logout />
-                
+
+                <Logout />
+
               }
             />
 

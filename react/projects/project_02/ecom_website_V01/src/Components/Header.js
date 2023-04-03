@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import '../App.css'
 import { Link } from 'react-router-dom'
+import "../App.css";
 
 export const Header = (props) => {
     const [message, setMessage] = useState("");
@@ -42,16 +43,19 @@ export const Header = (props) => {
                                 </svg>
                             </button>
                             <button className="inline-flex items-center font-medium text-black bg-green-500 border-0 ml-5 py-1 px-3 focus:outline-none hover:bg-green-400 rounded text-base mt-4 md:mt-0"><Link to="/login" >Login</Link>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </button> 
+                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
                         </div>
-                        : <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"><Link to="/account" >Account</Link>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
+                        : <div>
+                            <Link to='/cart' className="mr-5 hover:text-white"><i className="fa-solid fa-cart-shopping"></i><span class='badge badge-warning' id='lblCartCount'> 5 </span></Link>
+                            <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"><Link to="/account" >Account</Link>
+                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
                     }
                 </div>
             </header>

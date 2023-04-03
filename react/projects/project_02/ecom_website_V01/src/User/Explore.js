@@ -13,7 +13,7 @@ export const Explore = (props) => {
                     <div className="px-4 py-8 bg-white h-full dark:bg-gray-900 dark:border-gray-600">
                         <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white">Welcome to Dashboard</h2>
                         {/* <Settings /> */}
-                        <AddProduct />
+                        {/* <AddProduct /> */}
                         <DashboardFooter />
                     </div>
                 </div>
