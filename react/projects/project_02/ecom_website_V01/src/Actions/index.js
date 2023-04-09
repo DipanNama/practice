@@ -9,3 +9,9 @@ export const decNumber = () => {
         type : "DECREMENT"
     }
 }
+
+export const cartItems = () => {
+    return {
+        type : "ITEM"
+    }
+}

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Footer } from '../Components/Footer';
-import { Header } from '../Components/Header';
+import { Header } from '../Components/Header/Header';
+import { Footer } from '../Components/Footer/Footer';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from '../firebase';
+import Swal from 'sweetalert2'
+import Helmet from '../Components/Helmet/Helmet'
 
 export const ContactUs = (props) => {
     let style = {
@@ -11,7 +13,18 @@ export const ContactUs = (props) => {
         height: "100%",
         filter: "grayscale(1) contrast(1.2) opacity(0.16)"
     }
-    let src = "https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed";
+    let src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9558.610735773907!2d91.27851799190445!3d23.84077654789302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753f55d3fb69973%3A0x6f532f0800b2be03!2sUjjayanta%20Palace%20Museum!5e0!3m2!1sen!2sin!4v1680810969942!5m2!1sen!2sin";
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     const [userData, setUserData] = useState({
         name: "",
@@ -28,28 +41,38 @@ export const ContactUs = (props) => {
     }
 
     const handleSubmit = async (e) => {
-            e.preventDefault(e);
-            try {
-                const res = await addDoc(collection(db, "userQuery"), {
-                    ...userData,
-                    timestamp: serverTimestamp()
-                });
-                console.log("Document written with ID: ", res.id);
-            } catch (err) {
-                console.log(err)
-            }
-    
+        e.preventDefault(e);
+        try {
+            const res = await addDoc(collection(db, "userQuery"), {
+                ...userData,
+                timestamp: serverTimestamp()
+            });
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Message send successfully!'
+            })
+
+
+
+            console.log("Document written with ID: ", res.id);
+        } catch (err) {
+            console.log(err)
+        }
+
     }
 
 
     return (
         <div>
+            <Helmet title="Contact us" />
             <Header title="Developers Hub" SearchBar={true} name={props.name} loggedIn={true} />
             <section className="text-gray-400 bg-gray-900 body-font relative">
                 <form onSubmit={handleSubmit} action="POST">
                     <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
                         <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                             <iframe style={style} title="map" className="absolute inset-0" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src={src}></iframe>
+                            
                             <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
                                 <div className="lg:w-1/2 px-6">
                                     <h2 className="title-font font-semibold text-white tracking-widest text-xs">ADDRESS</h2>

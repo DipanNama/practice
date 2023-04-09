@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -35,7 +35,8 @@ import { Help } from "./Help";
 import { Settings } from "./User/Settings";
 import { ForgotPassword } from "./Pages/ForgotPassword";
 import { AddProduct } from "./Admin/AddProduct";
-import  Checkout  from "./Payment/Checkout";
+import Checkout from "./Payment/Checkout";
+import ProductDetail from "./User/ProductDetail";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -48,6 +49,8 @@ function App() {
       }
     });
   }, []);
+
+  
 
   return (
     <>
@@ -119,6 +122,13 @@ function App() {
               }
             />
 
+            <Route
+              exact
+              path="/product/:id"
+              element={
+                <ProductDetail />
+              }
+            />
 
             <Route
               exact

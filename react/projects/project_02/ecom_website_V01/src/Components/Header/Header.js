@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import "../App.css";
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 export const Header = (props) => {
     const [message, setMessage] = useState("");

@@ -3,7 +3,8 @@ import { DashbaordSidebar } from './Dashboard/DashboardSidebar'
 import { DashboardFooter } from './Dashboard/DashboardFooter'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { Scrollbars } from 'react-custom-scrollbars-2'
 
 export const Cart = (props) => {
   const stateValue = useSelector((state) => state.changeCartValue);
@@ -29,11 +30,17 @@ export const Cart = (props) => {
                       <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
                       <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
                     </div>
-
+                    
+                    <Scrollbars style={{ width: 1060, height: 400 }}>
                     <CartItem />
                     <CartItem />
                     <CartItem />
-
+                    <CartItem />
+                    <CartItem />
+                    <CartItem />
+                    <CartItem />
+                    <CartItem />
+                    </Scrollbars>
 
                     <Link to="/home" class="flex font-semibold text-indigo-600 text-sm mt-10">
 

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import { signInWithEmailAndPassword} from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../firebase';
 import Swal from 'sweetalert2'
 import 'animate.css';
+import Helmet from '../Components/Helmet/Helmet';
 export const Login = () => {
     const bg = {
         backgroundImage: 'url("https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")'
@@ -69,20 +70,21 @@ export const Login = () => {
         })
     }
 
-    const resetPassword = () => {
-        sendPasswordResetEmail(auth, values.email)
-            .then(() => {
-                console.log("Password reset link send successfully !!!")
-            })
-            .catch((error) => {
-                console.log("Error: ", error)
-            });
-    }
+    // const resetPassword = () => {
+    //     sendPasswordResetEmail(auth, values.email)
+    //         .then(() => {
+    //             console.log("Password reset link send successfully !!!")
+    //         })
+    //         .catch((error) => {
+    //             console.log("Error: ", error)
+    //         });
+    // }
 
 
 
     return (
         <div>
+            <Helmet title="Login"/>
             <div className="bg-white dark:bg-gray-900">
                 <div className="flex justify-center h-screen">
                     <div className="hidden bg-cover lg:block lg:w-2/3" style={bg}>
@@ -113,7 +115,7 @@ export const Login = () => {
                                     <div className="mt-6">
                                         <div className="flex justify-between mb-2">
                                             <label htmlFor="password" className="text-sm text-gray-600 dark:text-gray-200">Password</label>
-                                            <Link to="/forgotPassword" onClick={resetPassword} className="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline">Forgot password?</Link>
+                                            <Link to="/forgotPassword" className="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline">Forgot password?</Link>
                                         </div>
 
                                         <input type="password" name="password" id="password" placeholder="Your Password" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" onChange={(event) => setValues((prev) => ({ ...prev, pass: event.target.value }))} />

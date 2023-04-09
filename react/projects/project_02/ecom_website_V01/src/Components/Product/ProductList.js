@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Footer } from '../Footer'
-import { Header } from '../Header'
+import { Header } from '../Header/Header'
+import { Footer } from '../Footer/Footer'
 import { Card } from './Card'
 
 export const ProductList = (props) => {
