@@ -1,17 +1,23 @@
 export const incNumber = () => {
     return {
-        type : "INCREMENT"
+        type : "INCREMENT",
     }
 }
 
 export const decNumber = () => {
     return {
-        type : "DECREMENT"
+        type : "DECREMENT",
     }
 }
 
 export const cartItems = () => {
     return {
         type : "ITEM"
+    }
+}
+
+export const removeCart = () => {
+    return {
+        type : "REMOVE_CART"
     }
 }

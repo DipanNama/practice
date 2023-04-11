@@ -1,10 +1,12 @@
 import React from 'react'
 import { DashbaordSidebar } from './Dashboard/DashboardSidebar'
 import { DashboardFooter } from './Dashboard/DashboardFooter'
+import Helmet  from '../Components/Helmet/Helmet'
 
 export const Orders = (props) => {
     return (
         <div>
+            <Helmet title="Orders"/>
             <div className='flex'>
                 <DashbaordSidebar name={props.name} />
                 <div className='w-5/6 dark:bg-grey-900'>

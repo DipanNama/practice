@@ -1,8 +1,9 @@
 import React from 'react'
-
+import Helmet  from '../Components/Helmet/Helmet'
 export const Settings = () => {
     return (
         <>
+        <Helmet title="Settings" />
             <div>
                 <div className="md:grid md:grid-cols-3 md:gap-6">
                     {/* <div className="md:col-span-1">

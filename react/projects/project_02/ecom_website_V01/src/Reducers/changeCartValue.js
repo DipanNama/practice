@@ -1,10 +1,10 @@
-const initialState = 0;
+const initialState = localStorage.getItem("totalItems");
 
 const changeCartValue = (state = initialState, action) => {
-    switch (action.type){
-        case "INCREMENT" : return state + 1;
-        case "DECREMENT" : return state - 1;
-        default : return state;
+    switch (action.type) {
+        case "INCREMENT": return parseInt(localStorage.getItem("totalItems"));
+        case "DECREMENT": return parseInt(localStorage.getItem("totalItems"));
+        default: return state;
     }
 }
 

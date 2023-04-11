@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { incNumber } from "../../Actions/index"
 import Swal from 'sweetalert2'
+import React from 'react'
 
 import { Link } from 'react-router-dom';
 
@@ -18,12 +19,36 @@ export const Card = (props) => {
         }
     })
     const dispatch = useDispatch();
+
+    let ItemCount = parseInt(localStorage.getItem(`ItemCount${props.id}`))
+    if (!ItemCount){
+        ItemCount = 0
+    }
+    // const [count, setCount] = useState(ItemCount);
+
+    function setTotalCartValue() {
+        const keys = Object.keys(localStorage)
+        const cartArray = []
+        let totalCartvalue = 0;
+        keys.forEach((item) => {
+          if (item.slice(0, 9) === "ItemCount") {
+            cartArray.push(localStorage.getItem(item))
+            totalCartvalue = cartArray.reduce((partialSum, a) => partialSum + parseInt(a), 0)
+            localStorage.setItem("totalItems", totalCartvalue)
+          }
+        })
+      }
+
+
+
     const handleSubmission = () => {
-        dispatch(incNumber())
+        localStorage.setItem(`ItemCount${props.id}`,ItemCount + 1)
+        setTotalCartValue()
         Toast.fire({
             icon: 'success',
             title: 'Cart added successfully!!!'
         })
+        dispatch(incNumber(props.id))
 
     }
     return (

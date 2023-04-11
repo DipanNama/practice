@@ -14,11 +14,11 @@ export const BestSellingProducts = () => {
                             <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?poloshirt" />
                             <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?poncho" />
                             <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?sweater" />
-                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?longskirt" />
-                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?tunic" />
+                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?cardigan" />
+                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?mia+khalifa" />
                             <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?blouse" />
-                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?skirt" />
-                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?overall" />
+                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?thong" />
+                            <Card title="Denims Exclusive" price="$15" url="https://source.unsplash.com/random/?bikini" />
                         </div>
                     </div>
                 </div>

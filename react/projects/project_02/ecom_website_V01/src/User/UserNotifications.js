@@ -1,10 +1,12 @@
 import React from 'react'
 import { DashbaordSidebar } from './Dashboard/DashboardSidebar'
 import { DashboardFooter } from './Dashboard/DashboardFooter'
+import Helmet  from '../Components/Helmet/Helmet'
 
 export const UserNotifications = (props) => {
     return (
         <div>
+            <Helmet title="Notifications" />
             <div className='flex'>
                 <DashbaordSidebar name={props.name} />
                 <div className='w-5/6 dark:bg-grey-900'>
