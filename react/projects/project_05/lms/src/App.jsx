@@ -1,12 +1,8 @@
-import Helmet from "./Components/Helmet/Helmet"
+import Layout from "./components/Layout/Layout"
 
 function App() {
 
-  return (
-    <div className="App">
-      <Helmet title="App"></Helmet>
-    </div>
-  )
+  return <Layout />
 }
 
 export default App
