@@ -13,11 +13,17 @@ mongoose.connect("mongodb://localhost:27017/restAPI",{useNewUrlParser:true,useUn
     console.log(err)
 })
 
+
+// Creating Product Schema
+
 const productSchema = mongoose.Schema({
     name:String,
     description:String,
     price:Number,
 })
+
+
+// Creating Product Collection
 
 const Product = new mongoose.model("Products", productSchema)
 
@@ -94,7 +100,7 @@ app.delete("/api/v1/product/:id", async (req, res) => {
 
 
 
-
+// Server listening on port number 4500
 
 app.listen(4500, ()=>{
     console.log("Server is running on http://localhost:4500")

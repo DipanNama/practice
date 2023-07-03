@@ -9,7 +9,7 @@ const CartItem = (props) => {
   // const stateValue = useSelector((state) => state.changeCartValue);
   // const dispatch = useDispatch();
 
-
+  // const [price,setPrice] = useState();
 
   const id = props.id
   const [data, setData] = useState([]);
@@ -29,6 +29,7 @@ const CartItem = (props) => {
     fatchData()
   }, [id])
 
+  // console.log()
 
   function removeItemFromCart(id) {
     let tempId = `ItemCount${id}`
@@ -49,12 +50,6 @@ const CartItem = (props) => {
       }
     })
   }
-
-
-
-
-
-
 
 
   const dispatch = useDispatch();
@@ -82,11 +77,31 @@ const CartItem = (props) => {
   };
 
 
+  // console.log(data)
+  // let totalPrice = [];
+
+  // let totalPrice = [];
+
+
+  // let price = data.map(data => parseInt(data.price) * parseInt(localStorage.getItem(`ItemCount${data.id}`)))
+  // let price = data.map(data => )
+
+  // console.log(price)
+
+
+  // data.forEach((p) => {
+  //   totalPrice.push(parseInt(p.price) * parseInt(localStorage.getItem(`ItemCount${p.id}`)))
+  // })
+  // console.log(totalPrice)
+
+  // localStorage.setItem("totalPrice", totalPrice)
+
   return (
     <div>
-
       {data.map(data => (
         <>
+          {/* {setPrice(parseInt(data.price) * parseInt(localStorage.getItem(`ItemCount${data.id}`)))} */}
+          {/* {console.log(price)} */}
           <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
             <div class="flex w-2/5">
               <div class="w-20">

@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DashbaordSidebar } from './Dashboard/DashboardSidebar'
 import { DashboardFooter } from './Dashboard/DashboardFooter'
 import CartItem from './CartItem'
@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 // import { useEffect, useState } from 'react'
+
+import { getDoc, doc } from "firebase/firestore";
+import { db } from '../firebase';
+import { cartItems } from '../Actions'
 
 
 export const Cart = (props) => {
@@ -41,8 +45,34 @@ export const Cart = (props) => {
   // const totalCart = allNumbers.reduce((partialSum, a) => partialSum + parseInt(a), 0)
 
   
+  let prices = [];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    idList.forEach((id) => {
+      const fatchData = async () => {
+        let cartItems = []
+        try {
+          const docRef = doc(db, "productInfo", id)
+          getDoc(docRef).then(doc => {
+            cartItems.push({ id: doc.id, ...doc.data() })
+            setData(cartItems)
+            console.log(cartItems)
+            prices.push(parseInt(cartItems[0].price) * parseInt(localStorage.getItem(`ItemCount${cartItems[0].id}`)))
+            console.log(prices)
+
+          })
+        } catch (err) {
+          console.log(err)
+        }
+      };
+      fatchData()
+    })
+  }, [])
 
 
+  // let price = data.map(data => console.log(data.price))
+
+  // // console.log(price)
 
   return (
     <div>
