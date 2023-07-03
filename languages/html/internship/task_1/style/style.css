@@ -1,0 +1,114 @@
+/* style sheet for my index file */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgb(0, 0, 0, 0.5);
+}
+
+nav img{
+    height: 90px;
+    width: 90px;
+    margin: 15px 250px;
+    border-radius: 15px;
+}
+
+nav ul{
+    display: flex;
+    margin: 20px 30px;
+    padding: 10px;
+    margin-right: 250px;
+}
+nav ul li{
+    list-style-type: none;
+    padding: 20px;
+    
+}
+
+.div2 img{
+    height: calc(100% - 60px);
+    width: 100%;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+}
+
+nav ul li a:hover{
+    background-color: darkorchid;
+    padding: 10px 20px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    border-radius: 50px;
+    border: none;
+}
+
+/* preparing div elements */
+
+.container {
+    display: flex;
+    text-align: center;
+
+}
+
+.container .div1{
+    width: calc(25% - 40px);
+    border: 1px solid #000;
+    height: calc(100vh - 120px - 40px);
+    margin: 20px;
+    background-color: #eee;
+}
+
+.container .div2{
+    width: calc(50% - 40px);
+    border: 1px solid #000;
+    height: calc(100vh - 120px - 40px);
+    margin: 20px;
+    background-color: #eee;
+}
+
+.container .div34{
+    width: calc(25% - 20px);
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .div3{
+    width: 100%;
+    border: 1px solid #000;
+    height: calc(50vh - 20px);
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+}
+
+.container .div4{
+    width: 100%;
+    border: 1px solid #000;
+    height: calc(50vh - 20px);
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+}
+
+.container span{
+    font-size: 3em;
+}

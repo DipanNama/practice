@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Q1.Prepare a user registration form as given here. The data needs to be displayed when signup button is clicked. -->
+    <main>
+        <section class="form-menu">
+            <h1 class="title">Registration</h1>
+            <form action="#">
+                <h3 class="session">Session:<span id="year"></span></h3>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Name of Student:</span>
+                        <input type="text" placeholder="Enter your name" required >
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Contact/whatsApp No:</span>
+                        <input type="text" placeholder="Enter your number" required >
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date of Birth:</span>
+                        <input type="date" placeholder="Enter your DOB" required >
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email:</span>
+                        <input type="email" placeholder="Enter your Email" required >
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="SIGN UP">
+                </div>
+            </form>
+        </section>
+    </main>
+    <script>
+        let date = new Date()
+        let session = date.getFullYear() + " - " + parseInt(date.getFullYear() + 1)
+        document.getElementById("year").innerHTML = session
+    </script>
+</body>
+</html>
